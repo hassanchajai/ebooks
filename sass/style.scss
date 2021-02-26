@@ -1,0 +1,259 @@
+$black:black;
+$gold:#D7B46D;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: "poppins", sans-serif;
+}
+
+.container {
+    padding: 0 70px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 2;
+}
+
+.row .col {
+    margin: 25px;
+}
+
+.row .col .card {
+    background-color: white;
+    border-bottom-right-radius: 8px;
+    transition: .5s;
+    .card-img {
+        max-width: 300px;
+        height: 356px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .card-body {
+        padding: 10px 20px;
+        h3 {
+            font-size: 1.2rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+h2.title {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+// animation
+@keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+// header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    z-index: 99;
+    img {
+        width: 40px;
+        height: 40px;
+    }
+    .nav-links {
+        display: flex;
+        list-style: none;
+        li {
+            margin-left: 25px;
+            &:first-child {
+                margin: 0;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                transition: .3s;
+                letter-spacing: 3px;
+                &.active {
+                    color: $gold;
+                }
+                &:hover {
+                    color: $gold;
+                }
+            }
+        }
+    }
+    .nav-icons-sc {
+        display: flex;
+        list-style: none;
+        li {
+            margin-left: 15px;
+            &:first-child {
+                margin: 0;
+            }
+        }
+        li a {
+            color: white;
+        }
+    }
+}
+
+// end of header
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url("../imgs/BACKGROUN.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    font-size: 3rem;
+    h1 {
+        transform: translateX(-150%);
+        transition: 2s;
+        animation: flash 2s;
+        animation-delay: 2s;
+        &.active {
+            transform: translateX(0%);
+        }
+    }
+    h1 span {
+        padding-left: 60px;
+    }
+    a {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 30px;
+        font-size: 1rem;
+        border: 2px solid $gold;
+        border-radius: 15px;
+        transition: .5s;
+        cursor: pointer;
+        &:hover {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+}
+
+.best-selling {
+    padding: 50px 0px;
+    background-image: url(../imgs/best-selling.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+// other books
+.other-books {
+    background-color: $black;
+    padding: 40px 0px;
+    position: relative;
+    .container a {
+        margin: 0 auto;
+        transform: translateX(-50%);
+        padding: 10px 30px;
+        font-size: 1rem;
+        border: 2px solid $gold;
+        color: white;
+        text-decoration: none;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 15px;
+        transition: .5s;
+        cursor: pointer;
+        &:hover {
+            background-color: $gold;
+            color: $black;
+        }
+    }
+}
+
+
+/* footer */
+
+footer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    margin: 0 auto;
+    grid-column-gap: 50px;
+    padding: 40px 70px;
+    background-image: url(../imgs/best-selling.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(218, 218, 218);
+}
+
+.titles {
+    font-size: 1.4rem;
+    color: var(--light);
+    margin-bottom: 35px;
+}
+
+footer .company p {
+    line-height: 30px;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+
+footer .company h3 span {
+    color: $gold;
+}
+
+footer .contact ul {
+    list-style: none;
+}
+
+footer .contact ul li {
+    margin-bottom: 15px;
+}
+
+footer .contact ul li i {
+    margin-right: 10px;
+}
+
+.grp-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grp-icons i {
+    display: block;
+}
+
+
+/* end of footer */
+
+main {
+    padding-top: 90px;
+    background-color: black;
+    color: white;
+}
