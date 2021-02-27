@@ -15,8 +15,8 @@
     <header>
         <img src="imgs/logo.png" alt="logo image">
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Gallery</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Gallery.html" class="active">Gallery</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Add books</a></li>
         </ul>
@@ -39,7 +39,7 @@
         </ul>
     </header>
     <!-- main -->
-    <main>
+    <section id="gallery" class="gallery">
 
         <div class="container">
             <h2>Gallery > Books > Items</h2>
@@ -47,32 +47,116 @@
                 <!-- filter -->
                 <div class="col filter">
                     <form>
-                        <input type="number" name="min" id="min"> - <input type="number" name="max" id="max">
+                        <h3>Price :</h3>
+                        <input placeholder="Min Price" type="text" name="min" class="price" id="min"> - <input placeholder="Max Price" type="text" class="price" name="max" id="max">
                         <p class="error-price"></p>
-                        <h3>Authors</h3>
+                        <h3>Authors :</h3>
                         <div class="input-recherche">
-                            <input type="text" name="search" id="search">
+                            <input placeholder="Write something" type="text" name="search" id="search" style="display: block;">
                             <i class="fas fa-search"></i>
                         </div>
-                        <input type="checkbox" name="author" id="author" value="steven">Steven r. Coffey
+                        <div class="checkbox-example">
+                            <input type="checkbox" value="1" id="checkboxOneInput" name="authour" />
+                            <label for="checkboxOneInput"></label>
+                        </div>Steven r. Coffey
                         <br>
-                        <input type="checkbox" name="author" id="author" value="steven">Steven r. Coffey
-                        <br>
-                        <input type="checkbox" name="author" id="author" value="steven">Steven r. Coffey
-                        <br>
-                        <input type="checkbox" name="author" id="author" value="steven">Steven r. Coffey
-                        <br>
-                        <input type="checkbox" name="author" id="author" value="steven">Steven r. Coffey
-                        <br>
+
                     </form>
                 </div>
                 <!-- items -->
                 <div class="col items">
+                    <!-- begin of item -->
+                    <div class="item">
+                        <div class="card-gallery">
+                            <div class="offer">
+                                <i class="fas fa-ad" style="margin-right: 8px;"></i> special
+                            </div>
+                            <div class="card-gallery-img">
+                                <img src="imgs/book1.png" alt="">
+                            </div>
+                            <div class="card-gallery-body">
+                                <h3>The 7 habits of effective ...</h3>
+                                <div class="details">
+                                    <p>Setven r.cofey</p>
+                                    <p>2016-07-16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of item -->
+                    <!-- begin of item -->
+                    <div class="item">
+                        <div class="card-gallery">
 
+                            <div class="card-gallery-img">
+                                <img src="imgs/book1.png" alt="">
+                            </div>
+                            <div class="card-gallery-body">
+                                <h3>The 7 habits of effective ...</h3>
+                                <div class="details">
+                                    <p>Setven r.cofey</p>
+                                    <p>2016-07-16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of item -->
+                    <!-- begin of item -->
+                    <div class="item">
+                        <div class="card-gallery">
+
+                            <div class="card-gallery-img">
+                                <img src="imgs/book1.png" alt="">
+                            </div>
+                            <div class="card-gallery-body">
+                                <h3>The 7 habits of effective ...</h3>
+                                <div class="details">
+                                    <p>Setven r.cofey</p>
+                                    <p>2016-07-16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of item -->
+                    <!-- begin of item -->
+                    <div class="item">
+                        <div class="card-gallery">
+
+                            <div class="card-gallery-img">
+                                <img src="imgs/book1.png" alt="">
+                            </div>
+                            <div class="card-gallery-body">
+                                <h3>The 7 habits of effective ...</h3>
+                                <div class="details">
+                                    <p>Setven r.cofey</p>
+                                    <p>2016-07-16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of item -->
+                    <!-- begin of item -->
+                    <div class="item">
+                        <div class="card-gallery">
+
+                            <div class="card-gallery-img">
+                                <img src="imgs/book1.png" alt="">
+                            </div>
+                            <div class="card-gallery-body">
+                                <h3>The 7 habits of effective ...</h3>
+                                <div class="details">
+                                    <p>Setven r.cofey</p>
+                                    <p>2016-07-16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of item -->
                 </div>
             </div>
+
         </div>
-    </main>
+    </section>
     <!-- end of main -->
     <footer>
 

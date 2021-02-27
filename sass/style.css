@@ -25,9 +25,9 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
 }
 
 .row .col {
@@ -319,9 +319,154 @@ footer .contact ul li i {
 }
 
 /* end of footer */
-main {
+.gallery {
   padding-top: 90px;
   background-color: black;
   color: white;
+}
+
+.gallery .container .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+  grid-column-gap: 20px;
+}
+
+.gallery .container .row .filter {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  border-radius: 3px;
+}
+
+.gallery .container .row .filter form h3 {
+  margin-bottom: 10px;
+}
+
+.gallery .container .row .filter form .price {
+  width: 75px;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.gallery .container .row .filter form .input-recherche {
+  position: relative;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"]:focus {
+  -webkit-box-shadow: 0px 0px 15px blue;
+          box-shadow: 0px 0px 15px blue;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"]::-webkit-input-placeholder {
+  text-indent: 5px;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"]:-ms-input-placeholder {
+  text-indent: 5px;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"]::-ms-input-placeholder {
+  text-indent: 5px;
+}
+
+.gallery .container .row .filter form .input-recherche input[type="text"]::placeholder {
+  text-indent: 5px;
+}
+
+.gallery .container .row .filter form .input-recherche i {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  color: black;
+}
+
+.gallery .container .row .filter form input[type=checkbox] {
+  visibility: hidden;
+}
+
+.gallery .container .row .filter form .checkbox-example {
+  display: inline-block;
+  width: 45px;
+  height: 15px;
+  background: #555;
+  margin: 20px 10px 10px 0px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.gallery .container .row .filter form .checkbox-example label {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  background: #ccc;
+}
+
+.gallery .container .row .filter form .checkbox-example input[type=checkbox]:checked + label {
+  left: 27px;
+}
+
+.gallery .container .row .items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 30% 30%;
+      grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.gallery .container .row .items .item .card-gallery {
+  max-width: 245px;
+  cursor: pointer;
+}
+
+.gallery .container .row .items .item .card-gallery .offer {
+  color: white;
+  background-color: #D7B46D;
+  padding: 5px 10px;
+}
+
+.gallery .container .row .items .item .card-gallery .card-gallery-img {
+  height: 275px;
+}
+
+.gallery .container .row .items .item .card-gallery .card-gallery-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .container .row .items .item .card-gallery .card-gallery-body {
+  padding: 10px 0px;
+}
+
+.gallery .container .row .items .item .card-gallery .card-gallery-body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=style.css.map */
