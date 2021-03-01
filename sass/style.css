@@ -469,4 +469,24 @@ footer .contact ul li i {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  float: right;
+}
+
+.pagination li {
+  padding: 15px;
+  background-color: #D7B46D;
+  color: black;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.pagination li:first-child {
+  margin-left: 0px;
+}
 /*# sourceMappingURL=style.css.map */

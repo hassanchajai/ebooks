@@ -369,4 +369,20 @@ footer .contact ul li i {
 
 // end of gallery
 // pagination
+.pagination {
+    display: flex;
+    list-style: none;
+    float: right;
+    li {
+        padding: 15px;
+        background-color: $gold;
+        color: $black;
+        font-weight: 500;
+        margin-left: 8px;
+        &:first-child {
+            margin-left: 0px;
+        }
+    }
+}
+
 // end of pagination
