@@ -489,4 +489,72 @@ footer .contact ul li i {
 .pagination li:first-child {
   margin-left: 0px;
 }
+
+/* page contact  */
+.page-contact {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding-top: 80px;
+  background-color: black;
+  /* 
+error contact
+*/
+}
+
+.page-contact .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-contact .contact-title {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: white;
+}
+
+.page-contact .subtitle {
+  font-size: 3rem;
+  color: gray;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.page-contact .contact-form {
+  width: 100%;
+  padding: 20px;
+}
+
+.page-contact .contact-form form input {
+  display: block;
+  margin-bottom: 15px;
+  width: 75%;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.page-contact .contact-form form input[type="submit"] {
+  margin-top: 15px;
+  background-color: #D7B46D;
+  color: black;
+  margin-bottom: 0;
+  padding: 10px 0;
+  font-size: 1.4rem;
+}
+
+.page-contact .contact-form form textarea {
+  width: 75%;
+  margin: 10px auto;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px 20px;
+}
 /*# sourceMappingURL=style.css.map */
