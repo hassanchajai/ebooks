@@ -1,5 +1,6 @@
                             $black:black;
                             $gold:#D7B46D;
+                            $gray:rgb(105, 105, 105);
                             * {
                                 margin: 0;
                                 padding: 0;
@@ -120,6 +121,16 @@
                                         }
                                     }
                                     li a {
+                                        color: white;
+                                    }
+                                }
+                                .navbar-toggle {
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: none;
+                                    display: none;
+                                    cursor: pointer;
+                                    i {
                                         color: white;
                                     }
                                 }
@@ -304,30 +315,6 @@
                                                     margin-right: 6px;
                                                     margin-top: 15px;
                                                 }
-                                                // .checkbox-example {
-                                                //     display: inline-block;
-                                                //     width: 45px;
-                                                //     height: 15px;
-                                                //     background: #555;
-                                                //     margin: 20px 10px 10px 0px;
-                                                //     position: relative;
-                                                //     border-radius: 5px;
-                                                // }
-                                                // .checkbox-example label {
-                                                //     display: block;
-                                                //     width: 18px;
-                                                //     height: 18px;
-                                                //     border-radius: 50%;
-                                                //     transition: all .5s ease;
-                                                //     cursor: pointer;
-                                                //     position: absolute;
-                                                //     top: -2px;
-                                                //     left: -3px;
-                                                //     background: #ccc;
-                                                // }
-                                                // .checkbox-example input[type=checkbox]:checked+label {
-                                                //     left: 27px;
-                                                // }
                                             }
                                         }
                                         // end of filter
@@ -393,7 +380,6 @@
                                 text-align: center;
                                 padding-top: 80px;
                                 background-color: $black;
-                                @media screen {}
                                 .row {
                                     display: flex;
                                 }
@@ -460,8 +446,30 @@ error contact
                                     }
                                 }
                                 header {
+                                    position: fixed;
                                     .nav-links {
-                                        display: none;
+                                        display: block;
+                                        position: absolute;
+                                        left: 0;
+                                        top: 80px;
+                                        width: 100%;
+                                        max-height: 0px;
+                                        overflow: hidden;
+                                        transition: 1s;
+                                        background-color: $gray;
+                                        li {
+                                            padding: 25px;
+                                            border-bottom: 1px;
+                                            &:first-child {
+                                                margin-left: 25px;
+                                            }
+                                        }
+                                    }
+                                    .navbar-toggle {
+                                        display: block;
+                                    }
+                                    .nav-links-active {
+                                        max-height: 300px;
                                     }
                                     .nav-icons-sc {
                                         display: none;
@@ -480,6 +488,19 @@ error contact
                                     .container {
                                         .row {
                                             display: block;
+                                            .filter {
+                                                align-self: flex-start;
+                                                justify-self: start;
+                                                border-radius: 3px;
+                                                form {
+                                                    h3 {
+                                                        margin-bottom: 10px;
+                                                    }
+                                                    .price {
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
                                             .items {
                                                 display: grid;
                                                 grid-template-columns: 50% 50%;
@@ -489,75 +510,4 @@ error contact
                                         }
                                     }
                                 }
-                                //             .filter {
-                                //                 align-self: flex-start;
-                                //                 justify-self: start;
-                                //                 border-radius: 3px;
-                                //                 form {
-                                //                     h3 {
-                                //                         margin-bottom: 10px;
-                                //                     }
-                                //                     .price {
-                                //                         width: 75px;
-                                //                         margin-bottom: 15px;
-                                //                         padding: 5px 10px;
-                                //                         outline: none;
-                                //                         border: none;
-                                //                         border-radius: 3px;
-                                //                     }
-                                //                     .input-recherche {
-                                //                         position: relative;
-                                //                         input[type="text"] {
-                                //                             display: block;
-                                //                             width: 100%;
-                                //                             padding: 5px 10px;
-                                //                             border-radius: 3px;
-                                //                             outline: none;
-                                //                             border: none;
-                                //                             &:focus {
-                                //                                 box-shadow: 0px 0px 15px blue;
-                                //                             }
-                                //                             &::placeholder {
-                                //                                 text-indent: 5px;
-                                //                             }
-                                //                         }
-                                //                         i {
-                                //                             display: block;
-                                //                             position: absolute;
-                                //                             top: 5px;
-                                //                             right: 7px;
-                                //                             color: black;
-                                //                         }
-                                //                     }
-                                //                     // end of input recherche
-                                //                     input[type=checkbox] {
-                                //                         visibility: hidden;
-                                //                     }
-                                //                     .checkbox-example {
-                                //                         display: inline-block;
-                                //                         width: 45px;
-                                //                         height: 15px;
-                                //                         background: #555;
-                                //                         margin: 20px 10px 10px 0px;
-                                //                         position: relative;
-                                //                         border-radius: 5px;
-                                //                     }
-                                //                     .checkbox-example label {
-                                //                         display: block;
-                                //                         width: 18px;
-                                //                         height: 18px;
-                                //                         border-radius: 50%;
-                                //                         transition: all .5s ease;
-                                //                         cursor: pointer;
-                                //                         position: absolute;
-                                //                         top: -2px;
-                                //                         left: -3px;
-                                //                         background: #ccc;
-                                //                     }
-                                //                     .checkbox-example input[type=checkbox]:checked+label {
-                                //                         left: 27px;
-                                //                     }
-                                //                 }
-                                //             }
-                                // end of gallery
                             }

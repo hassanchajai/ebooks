@@ -8,3 +8,11 @@ window.onscroll = function() {
         document.querySelector("header").style.boxShadow = "none";
     }
 }
+const navbar = document.querySelector("header .nav-links");
+const btn = document.querySelector(".navbar-toggle");
+
+btn.addEventListener("click", () => {
+    navbar.classList.toggle("nav-links-active");
+
+
+})
