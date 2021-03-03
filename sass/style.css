@@ -8,6 +8,7 @@
 body {
   font-size: 14px;
   font-family: "poppins", sans-serif;
+  background-color: black;
 }
 
 .container {
@@ -397,35 +398,9 @@ footer .contact ul li i {
 }
 
 .gallery .container .row .filter form input[type=checkbox] {
-  visibility: hidden;
-}
-
-.gallery .container .row .filter form .checkbox-example {
-  display: inline-block;
-  width: 45px;
-  height: 15px;
-  background: #555;
-  margin: 20px 10px 10px 0px;
-  position: relative;
-  border-radius: 5px;
-}
-
-.gallery .container .row .filter form .checkbox-example label {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  cursor: pointer;
-  position: absolute;
-  top: -2px;
-  left: -3px;
-  background: #ccc;
-}
-
-.gallery .container .row .filter form .checkbox-example input[type=checkbox]:checked + label {
-  left: 27px;
+  display: inline;
+  margin-right: 6px;
+  margin-top: 15px;
 }
 
 .gallery .container .row .items {
@@ -556,5 +531,46 @@ error contact
   border: none;
   border-bottom: 1px solid gray;
   padding: 10px 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0 40px;
+  }
+  footer {
+    display: block;
+  }
+  footer div {
+    margin-top: 20px;
+  }
+  footer div:first-child {
+    margin: 0;
+  }
+  header .nav-links {
+    display: none;
+  }
+  header .nav-icons-sc {
+    display: none;
+  }
+  .main {
+    font-size: 2rem;
+  }
+  .main h1 span {
+    padding-left: 0px;
+  }
+  .gallery {
+    padding-top: 90px;
+  }
+  .gallery .container .row {
+    display: block;
+  }
+  .gallery .container .row .items {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
