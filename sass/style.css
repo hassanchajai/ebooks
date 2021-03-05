@@ -9,6 +9,7 @@ body {
   font-size: 14px;
   font-family: "poppins", sans-serif;
   background-color: black;
+  scrollbar-color: #D7B46D black;
 }
 
 .container {
@@ -98,6 +99,19 @@ h2.title {
   75% {
     opacity: 0;
   }
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  background-color: #282828;
+  padding: 20px;
+}
+
+.title h2 {
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
 }
 
 header {
@@ -545,7 +559,168 @@ error contact
   padding: 10px 20px;
 }
 
-@media screen and (max-width: 450px) {
+.add-book {
+  padding: 80px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-book form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 45px 0;
+}
+
+.add-book form div {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.add-book form label {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.add-book form input {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.add-book form img {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.add-book form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+}
+
+.add-book form button {
+  padding: 20px 40px;
+  margin: 20px auto;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  border: none;
+}
+
+.books {
+  padding: 100px 0px 80px 0;
+  color: white;
+}
+
+.books .container .btns {
+  width: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 25px 0px;
+}
+
+.books .container .btns button {
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  outline: none;
+  color: black;
+}
+
+.books .container .btns button:hover {
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.books .container .btns .filter button {
+  border-radius: 40%;
+}
+
+.books .container .data table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.books .container .data td,
+.books .container .data th {
+  text-align: left;
+  padding: 15px;
+  color: white;
+  border-bottom: 1px solid dimgray;
+}
+
+.books .container .data .edit {
+  position: relative;
+}
+
+.books .container .data .edit ul {
+  position: absolute;
+  top: 9px;
+  right: 13px;
+  background-color: dimgray;
+  border-bottom-right-radius: 5px;
+  list-style: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: none;
+}
+
+.books .container .data .edit ul li {
+  padding: 10px 20px;
+}
+
+.books .container .data .edit ul li a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.books .container .data .edit ul li a:hover {
+  color: #D7B46D;
+}
+
+@media screen and (max-width: 550px) {
+  .books {
+    padding: 100px 0px 80px 0;
+    color: white;
+  }
+  .books .container {
+    padding: 0 !important;
+  }
   .container {
     padding: 0 40px;
   }
@@ -584,7 +759,7 @@ error contact
     display: block;
   }
   header .nav-links-active {
-    max-height: 300px;
+    max-height: 400px;
   }
   header .nav-icons-sc {
     display: none;
@@ -617,10 +792,16 @@ error contact
   .gallery .container .row .items {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+  }
+  .page-contact .contact-form form input {
+    width: 100%;
+  }
+  .page-contact .contact-form form textarea {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

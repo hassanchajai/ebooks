@@ -17,10 +17,9 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-            <li><a href="books.html">Book</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="books.html" class="active">Book</a></li>
             <li><a href="authour.html">Authour</a></li>
-
         </ul>
         <ul class="nav-icons-sc">
             <li>
@@ -43,36 +42,60 @@
             <i class="fas fa-bars fa-2x"></i>
         </button>
     </header>
-
-    <!-- contact -->
-    <section id="contact" class="page-contact">
+    <!-- main -->
+    <section class="books" id="books">
+        <div class="title">
+            <h2>Books</h2>
+        </div>
         <div class="container">
-            <h1 class=" contact-title">Contact Us</h1>
-            <h3 class="subtitle">Let's Work Together</h3>
-            <div class="row">
-                <div class="Contact-form">
-                    <form>
+            <div class="btns">
+                <div class="filter">
+                    <button class="all">
+                        All
+                    </button>
+                    <button class="Recent">
+                        Recent
+                    </button>
 
-                        <input type="text" placeholder="Full name" name="name" />
-                        <p class="error name-error"></p>
-
-                        <input type="text" placeholder="Email" name="email" />
-                        <p class="error email-error"></p>
-                        <input type="text" placeholder="Subject" name="subject" />
-                        <p class="error subject-error"></p>
-                        <textarea name="message" placeholder="Message" id="message" cols="30" rows="10"></textarea>
-                        <p class="error message-error"></p>
-                        <input type="submit" name="submit" />
-                        <p class="message-form"></p>
-                    </form>
                 </div>
+                <button class="addbook" onclick='window.location="book.html"'>Add Book</button>
+            </div>
+            <div class="data">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td class="edit">
+                            <i class="fas fa-bars"></i>
 
+                            <ul>
+                                <li>
+                                    <a class="" href="#">Edit</a>
+
+                                </li>
+                                <li>
+                                    <a class="" href="#">Delete</a>
+                                </li>
+                            </ul>
+
+                        </td>
+
+                    </tr>
+
+                </table>
             </div>
         </div>
-
     </section>
-
-    <!-- end of contact -->
+    <!--end of main -->
     <footer>
 
         <div class="company">

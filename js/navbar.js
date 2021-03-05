@@ -13,6 +13,4 @@ const btn = document.querySelector(".navbar-toggle");
 
 btn.addEventListener("click", () => {
     navbar.classList.toggle("nav-links-active");
-
-
-})
+});

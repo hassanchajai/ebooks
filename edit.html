@@ -17,8 +17,9 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-            <li><a href="books.html">Book</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="books.html" class="">Book</a></li>
             <li><a href="authour.html">Authour</a></li>
 
         </ul>
@@ -43,36 +44,37 @@
             <i class="fas fa-bars fa-2x"></i>
         </button>
     </header>
-
-    <!-- contact -->
-    <section id="contact" class="page-contact">
+    <!-- main -->
+    <section class="add-book" id="add-book">
+        <div class="add-book-title">
+            <h2>Edit Book</h2>
+        </div>
         <div class="container">
-            <h1 class=" contact-title">Contact Us</h1>
-            <h3 class="subtitle">Let's Work Together</h3>
-            <div class="row">
-                <div class="Contact-form">
-                    <form>
 
-                        <input type="text" placeholder="Full name" name="name" />
-                        <p class="error name-error"></p>
+            <form>
 
-                        <input type="text" placeholder="Email" name="email" />
-                        <p class="error email-error"></p>
-                        <input type="text" placeholder="Subject" name="subject" />
-                        <p class="error subject-error"></p>
-                        <textarea name="message" placeholder="Message" id="message" cols="30" rows="10"></textarea>
-                        <p class="error message-error"></p>
-                        <input type="submit" name="submit" />
-                        <p class="message-form"></p>
-                    </form>
+                <div>
+                    <label for="title">Title :</label>
+                    <input type="text" id="title">
+                </div>
+                <div>
+                    <label for="title">Authour :</label>
+                    <input type="text" id="title">
+                </div>
+                <div>
+                    <input type="file" name="file" id="file">
+                    <img src="imgs/book1.png" alt="" width="440" height="320">
                 </div>
 
-            </div>
+                <div>
+                    <label for="description">Description :</label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-
     </section>
-
-    <!-- end of contact -->
+    <!--end of main -->
     <footer>
 
         <div class="company">
