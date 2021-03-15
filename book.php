@@ -1,3 +1,20 @@
+<?php
+include_once "./config/database.php";
+// remplir select with authours
+$get_authors = "SELECT id,name FROM authour";
+$result = mysqli_query($conn, $get_authors);
+$authors = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+if(isset($_POST["submit-form"])){
+    extract($_POST);
+
+}
+
+
+
+?>
+
 <html lang="en">
 
 <head>
@@ -18,8 +35,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="Gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="books.html">Book</a></li>
-            <li><a href="authour.html" class="active">Authour</a></li>
+
+            <li><a href="books.html" class="active">Book</a></li>
+            <li><a href="authour.html">Authour</a></li>
+
         </ul>
         <ul class="nav-icons-sc">
             <li>
@@ -45,22 +64,37 @@
     <!-- main -->
     <section class="add-book" id="add-book">
         <div class="title">
-            <h2>Add Authour</h2>
+            <h2>Add Book</h2>
         </div>
         <div class="container">
 
-            <form>
+            <form action="book.php" method="POST">
 
                 <div>
-                    <label for="title">Name :</label>
+                    <label for="title">Title :</label>
                     <input type="text" id="title">
                 </div>
                 <div>
-                    <label for="title">Birthday :</label>
-                    <input type="text" id="title">
+                    <label for="title">Authour :</label>
+                    <br>
+                    <select multiple>
+                        <?php foreach ($authors as $author) :  ?>
+                            <option value="<?php echo $author["id"]; ?>">
+                                <?php echo $author["name"]; ?>
+                            </option><?php endforeach; ?>
+                    </select>
+                    <?php  ?>
+                </div>
+                <div>
+                    <input type="file" name="file" id="file">
+                    <img src="imgs/book1.png" alt="" width="440" height="320">
                 </div>
 
-                <button type="submit">Submit</button>
+                <div>
+                    <label for="description">Description :</label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" name="submit-form">Submit</button>
             </form>
         </div>
     </section>
