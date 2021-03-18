@@ -48,8 +48,10 @@ if (isset($_POST["submit-form"])) {
     $upload =  move_uploaded_file($files["img_file"]["tmp_name"], "uploads/" . $filename);
 
     // delete all authors
-    $sql_DeleteBooksAuthours = "DELETE FROM bookauthour WHERE id=$id";
-    $query = mysqli_query($conn, $sql_DeleteBooksAuthours);
+    $sql_DeleteBooksAuthours = "DELETE FROM bookauthour WHERE idbook=$id";
+    if(!mysqli_query($conn, $sql_DeleteBooksAuthours)){
+        echo "connection error : " . mysqli_error($conn);
+    };
 
     //    Update the authors
     foreach ($authours as $key => $value) {
