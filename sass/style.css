@@ -77,6 +77,10 @@ h2.titles {
   margin-bottom: 30px;
 }
 
+select {
+  padding: 20px 40px;
+}
+
 @-webkit-keyframes flash {
   0%,
   50%,

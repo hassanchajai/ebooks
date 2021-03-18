@@ -1,34 +1,18 @@
 console.log("%cAlrights Reserved 2021", "color:orange");
 
-// code here
-// todo  : function for retrieve all books
-// and function for add 
-// and function for remove
-// and function for modifie
+// edit
+const btn_edit = document.querySelectorAll(" .edit");
 
-//  books
-
-//  authour
-
-
-
-// login
-
-
-// test
-
-
-var x = "hello";
-fetch("php/test.php", {
-    method: 'get',
+btn_edit.forEach(element => {
+    element.addEventListener("click", e => {
+        console.log(e);
+        if (e.target.tagName == "I") {
+            e.target.nextElementSibling.style.display = "block";
+        }
 
 
 
-}).then(function(response) {
-    console.log(response);
-    return response.json();
-}).then(res => {
-    console.log(res);
-}).catch(err => {
-    console.log(err);
-});
+
+
+    })
+})

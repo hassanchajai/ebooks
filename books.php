@@ -1,3 +1,42 @@
+<?php 
+
+include_once "./config/database.php";
+
+$get_books = "SELECT * FROM book";
+$result = mysqli_query($conn, $get_books);
+$books = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// suppression 
+
+function Supp_book($id){
+    global $conn;
+
+    $delete_bookintableBOOKandAUTHOR="DELETE FROM bookauthour where idbook=$id";
+
+
+    if(mysqli_query($conn,$delete_bookintableBOOKandAUTHOR)){
+
+        $sql_deletebook="DELETE FROM book WHERE id=$id";
+        if(!mysqli_query($conn,$sql_deletebook)){
+            echo "Mysql Error : ".mysqli_error($conn);
+            die();
+        }
+    }
+
+
+
+
+
+}
+
+if(isset($_POST["submit-delete"])){
+    $id=$_POST["id"];
+    Supp_book($id);
+    header("Location: books.php");
+}
+
+?>
+
 <html lang="en">
 
 <head>
@@ -66,14 +105,18 @@
                         <th>Id</th>
                         <th>Title</th>
                         <th>Description</th>
-                        <th>Date</th>
+                        <th>price</th>
                         <th>Edit</th>
                     </tr>
+
+
+<?php foreach($books as $book): ?>
+
                     <tr>
-                        <td>1</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
+                        <td><?php echo $book["id"]; ?></td>
+                        <td><?php echo $book["title"]; ?></td>
+                        <td><?php echo $book["description"]; ?></td>
+                        <td><?php echo $book["price"]; ?></td>
                         <td class="edit">
                             <i class="fas fa-bars"></i>
 
@@ -83,13 +126,18 @@
 
                                 </li>
                                 <li>
-                                    <a class="" href="#">Delete</a>
+                                <form action="books.php" method="POST">
+                                <input type="hidden" name="id" value="<?php echo  $book["id"]; ?>" />
+                                <button name="submit-delete" type="submit" href="#">Delete</button>
+                                </form>
+                                    
                                 </li>
                             </ul>
 
                         </td>
 
                     </tr>
+                    <?php endforeach; ?>
 
                 </table>
             </div>

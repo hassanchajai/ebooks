@@ -5,13 +5,92 @@ $get_authors = "SELECT id,name FROM authour";
 $result = mysqli_query($conn, $get_authors);
 $authors = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
-if(isset($_POST["submit-form"])){
+if (isset($_POST["submit-form"])) {
     extract($_POST);
+    if (empty($title) && empty($description) && empty($authours)) {
+        header("Location: book.php?error=title and description and Authors are empty");
+        die();
+    } else if (empty($title) && empty($description)) {
+        header("Location: book.php?error=title and description are empty");
+        die();
+    } else if (empty($title) && empty($authours)) {
+        header("Location: book.php?error=title and Authors are empty");
+        die();
+    } else  if (empty($description) && empty($authours)) {
+        header("Location: book.php?error=Authors and description are empty");
+        die();
+    } else if (empty($description)) {
+        header("Location: book.php?error=description are empty");
+        die();
+    } else  if (empty($title)) {
+        header("Location: book.php?error=title are empty");
+        die();
+    } else  if (empty($authours)) {
+        header("Location: book.php?error=Authors are empty");
+        die();
+    } else {
 
+        // store image
+        //get extension from the file
+        $files = $_FILES;
+        $filename = "";
+        $allowedExts = array("gif", "jpeg", "jpg", "png");
+        $temp = explode(".", $files["img_file"]["name"]);
+        $extension = end($temp);
+        if ((($files["img_file"]["type"] == "image/gif") //check image is gif
+                || ($files["img_file"]["type"] == "image/jpeg") //check image is jpeg
+                || ($files["img_file"]["type"] == "image/jpg")     //check image is jpg
+                || ($files["img_file"]["type"] == "image/png")) //check image is png
+            && ($files["img_file"]["size"] < 2000000) //check if image size is below 2MB
+            && in_array(trim($extension), $allowedExts)
+        ) //check the extensions also
+        {
+            if ($files["img_file"]["error"] > 0) //check if any file error
+            {
+                echo $files["img_file"]["error"];
+            } else {
+                //unique file name to avoid overwriting
+                $filename = time() . $files["img_file"]["name"];
+
+                //move the uploaded file to folder
+                $upload =  move_uploaded_file($files["img_file"]["tmp_name"], "uploads/" . $filename);
+
+                $sql_insertBook = "INSERT INTO book(title,description,image) VALUES('$title','$description','$filename')";
+                $query = mysqli_query($conn, $sql_insertBook);
+                if (!$query) {
+                    echo "query error " . mysqli_error($conn);
+                } else {
+                    // success 
+                    $idbook=mysqli_insert_id($conn);
+                   
+                    foreach ($_POST["authours"] as $key => $value) {
+                         $sql_AffectBookToAuthorsSelected = "INSERT INTO bookauthour(idbook,idauthour) VALUES($idbook,$value)";
+                        if(!mysqli_query($conn, $sql_AffectBookToAuthorsSelected)){
+                            echo "connection error : ".mysqli_error($conn);
+                        }
+
+
+                    }
+                }
+            }
+        } else {
+            echo "Please upload only image files and should be less than 2MB";
+        }
+
+        //end store
+
+    }
 }
 
+/* 
 
+
+  foreach ($_POST['subject'] as $subject)  
+                print "You selected $subject<br/>"; 
+
+
+      
+*/
 
 ?>
 
@@ -68,16 +147,16 @@ if(isset($_POST["submit-form"])){
         </div>
         <div class="container">
 
-            <form action="book.php" method="POST">
+            <form action="book.php" method="POST" enctype="multipart/form-data">
 
                 <div>
                     <label for="title">Title :</label>
-                    <input type="text" id="title">
+                    <input type="text" id="title" name="title">
                 </div>
                 <div>
-                    <label for="title">Authour :</label>
+                    <label for="authour">Authour :</label>
                     <br>
-                    <select multiple>
+                    <select name="authours[]" multiple>
                         <?php foreach ($authors as $author) :  ?>
                             <option value="<?php echo $author["id"]; ?>">
                                 <?php echo $author["name"]; ?>
@@ -86,8 +165,8 @@ if(isset($_POST["submit-form"])){
                     <?php  ?>
                 </div>
                 <div>
-                    <input type="file" name="file" id="file">
-                    <img src="imgs/book1.png" alt="" width="440" height="320">
+                    <input type="file" name="img_file" id="file">
+
                 </div>
 
                 <div>

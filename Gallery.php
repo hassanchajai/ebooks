@@ -1,3 +1,18 @@
+<?php 
+
+include_once "./config/database.php";
+
+$get_books = "SELECT * FROM book";
+$result = mysqli_query($conn, $get_books);
+$books = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+
+
+?>
+
+
+
 <html lang="en">
 
 <head>
@@ -54,7 +69,7 @@
                 <div class="col filter">
                     <form>
                         <h3>Price :</h3>
-                        <input placeholder="Min Price" type="text" name="min" class="price" id="min"> - <input placeholder="Max Price" type="text" class="price" name="max" id="max">
+                        <input placeholder="Min" type="number" name="min" class="price" id="min"> - <input placeholder="Max" type="number" class="price" name="max" id="max">
                         <p class="error-price"></p>
                         <h3>Authors :</h3>
                         <div class="input-recherche">
@@ -62,7 +77,6 @@
                             <i class="fas fa-search"></i>
                         </div>
 
-                        <input type="checkbox" value="1" id="checkboxOneInput" name="authour" /> Steven r. Coffey
                         <br>
 
                     </form>
@@ -70,92 +84,27 @@
                 <!-- items -->
                 <div class="col items">
                     <!-- begin of item -->
+                    <?php foreach($books as $book): ?>
                     <div class="item">
                         <div class="card-gallery">
-                            <div class="offer">
+                            <!-- <div class="offer">
                                 <i class="fas fa-ad" style="margin-right: 8px;"></i> special
-                            </div>
+                            </div> -->
                             <div class="card-gallery-img">
-                                <img src="imgs/book1.png" alt="">
+                                <img src="<?php echo "uploads/".$book["image"]; ?>" alt="">
                             </div>
                             <div class="card-gallery-body">
-                                <h3>The 7 habits of effective ...</h3>
+                                <h3 class="item-title"><?php echo $book["title"]; ?></h3>
                                 <div class="details">
-                                    <p>Setven r.cofey</p>
-                                    <p>2016-07-16</p>
+                                    <p><?php echo $book["description"]; ?></p>
+                                    <p class="price"><?php echo $book["price"]; ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end of item -->
-                    <!-- begin of item -->
-                    <div class="item">
-                        <div class="card-gallery">
-
-                            <div class="card-gallery-img">
-                                <img src="imgs/book1.png" alt="">
-                            </div>
-                            <div class="card-gallery-body">
-                                <h3>The 7 habits of effective ...</h3>
-                                <div class="details">
-                                    <p>Setven r.cofey</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of item -->
-                    <!-- begin of item -->
-                    <div class="item">
-                        <div class="card-gallery">
-
-                            <div class="card-gallery-img">
-                                <img src="imgs/book1.png" alt="">
-                            </div>
-                            <div class="card-gallery-body">
-                                <h3>The 7 habits of effective ...</h3>
-                                <div class="details">
-                                    <p>Setven r.cofey</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of item -->
-                    <!-- begin of item -->
-                    <div class="item">
-                        <div class="card-gallery">
-
-                            <div class="card-gallery-img">
-                                <img src="imgs/book1.png" alt="">
-                            </div>
-                            <div class="card-gallery-body">
-                                <h3>The 7 habits of effective ...</h3>
-                                <div class="details">
-                                    <p>Setven r.cofey</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of item -->
-                    <!-- begin of item -->
-                    <div class="item">
-                        <div class="card-gallery">
-
-                            <div class="card-gallery-img">
-                                <img src="imgs/book1.png" alt="">
-                            </div>
-                            <div class="card-gallery-body">
-                                <h3>The 7 habits of effective ...</h3>
-                                <div class="details">
-                                    <p>Setven r.cofey</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of item -->
+                    <?php endforeach; ?>
+                    
                 </div>
             </div>
             <!-- <ul class="pagination">
@@ -198,5 +147,6 @@
 <!-- js here -->
 <script src="js/sandbox.js"></script>
 <script src="js/navbar.js"></script>
+<script src="js/gallery.js"></script>
 
 </html>
