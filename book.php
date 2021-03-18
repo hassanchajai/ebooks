@@ -55,7 +55,7 @@ if (isset($_POST["submit-form"])) {
                 //move the uploaded file to folder
                 $upload =  move_uploaded_file($files["img_file"]["tmp_name"], "uploads/" . $filename);
 
-                $sql_insertBook = "INSERT INTO book(title,description,image) VALUES('$title','$description','$filename')";
+                $sql_insertBook = "INSERT INTO book(title,description,image,price) VALUES('$title','$description','$filename',$price)";
                 $query = mysqli_query($conn, $sql_insertBook);
                 if (!$query) {
                     echo "query error " . mysqli_error($conn);
@@ -152,6 +152,11 @@ if (isset($_POST["submit-form"])) {
                 <div>
                     <label for="title">Title :</label>
                     <input type="text" id="title" name="title">
+                </div>
+                <div>
+                    <label for="Price">Price :</label>
+                    <input type="text" id="Price" name="price" value="0">
+
                 </div>
                 <div>
                     <label for="authour">Authour :</label>

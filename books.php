@@ -54,9 +54,9 @@ if(isset($_POST["submit-delete"])){
     <header>
         <img src="imgs/logo.png" alt="logo image">
         <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="Gallery.php">Gallery</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="books.php" class="active">Book</a></li>
             <li><a href="authour.php">Authour</a></li>
         </ul>

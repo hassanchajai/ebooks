@@ -55,10 +55,10 @@ if (isset($_POST["submit-form"])) {
         <img src="imgs/logo.png" alt="logo image">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="Gallery.php">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="books.html">Book</a></li>
-            <li><a href="authour.html" class="active">Authour</a></li>
+            <li><a href="books.php">Book</a></li>
+            <li><a href="authour.php" class="active">Authour</a></li>
         </ul>
         <ul class="nav-icons-sc">
             <li>

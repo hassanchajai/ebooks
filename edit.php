@@ -37,15 +37,22 @@ if (isset($_POST["submit-form"])) {
 
     extract($_POST);
 
-
+    $filepath="";
+    $filename="" ;
     $files=$_FILES;
     $sql = "SELECT * FROM book WHERE id=$id LIMIT 0,1";
     $result = mysqli_query($conn, $sql);
     $book = mysqli_fetch_assoc($result);
-    $filepath = "./uploads/" . $book["image"];
-    unlink($filepath);
-    $filename = time() . $files["img_file"]["name"];
-    $upload =  move_uploaded_file($files["img_file"]["tmp_name"], "uploads/" . $filename);
+    if(empty($_POST["img_file"])){
+        $filepath = "./uploads/" . $book["image"];
+        unlink($filepath);
+        $filename = time() . $files["img_file"]["name"];
+        $upload =  move_uploaded_file($files["img_file"]["tmp_name"], "uploads/" . $filename);
+    }
+    else{
+        $filename= "./uploads/" . $book["image"];
+    }
+ 
 
     // delete all authors
     $sql_DeleteBooksAuthours = "DELETE FROM bookauthour WHERE idbook=$id";
@@ -61,7 +68,7 @@ if (isset($_POST["submit-form"])) {
         }
     }
 
-    $sql_updateBook = "UPDATE book SET title='$title' , description='$description' , image='$filename' WHERE id=$id";
+    $sql_updateBook = "UPDATE book SET title='$title' , description='$description' , image='$filename',price=$price WHERE id=$id";
     if (!mysqli_query($conn, $sql_updateBook)) {
         echo "connection error : " . mysqli_error($conn);
     }
@@ -90,11 +97,11 @@ if (isset($_POST["submit-form"])) {
         <img src="imgs/logo.png" alt="logo image">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="Gallery.php">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
 
-            <li><a href="books.html" class="">Book</a></li>
-            <li><a href="authour.html">Authour</a></li>
+            <li><a href="books.php" class="">Book</a></li>
+            <li><a href="authour.php">Authour</a></li>
 
         </ul>
         <ul class="nav-icons-sc">
@@ -130,6 +137,11 @@ if (isset($_POST["submit-form"])) {
                 <div>
                     <label for="title">Title :</label>
                     <input type="text" id="title" name="title" value="<?php echo $book["title"]; ?>">
+
+                </div>
+                <div>
+                    <label for="Price">Price :</label>
+                    <input type="text" id="Price" name="price" value="<?php echo $book["price"]; ?>">
 
                 </div>
                 <div>
