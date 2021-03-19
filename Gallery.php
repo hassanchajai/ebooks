@@ -5,8 +5,10 @@ include_once "./config/database.php";
 $get_books = "SELECT * FROM book";
 $result = mysqli_query($conn, $get_books);
 $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
+// 
+$get_authour = "SELECT id,name FROM authour";
+$result_authour = mysqli_query($conn, $get_authour);
+$authours = mysqli_fetch_all($result_authour, MYSQLI_ASSOC);
 
 
 ?>
@@ -71,13 +73,16 @@ $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <h3>Price :</h3>
                         <input placeholder="Min" type="number" name="min" class="price" id="min"> - <input placeholder="Max" type="number" class="price" name="max" id="max">
                         <p class="error-price"></p>
-                        <h3>Authors :</h3>
+                        <h3>Title :</h3>
                         <div class="input-recherche">
                             <input placeholder="Write something" type="text" name="search" id="search" style="display: block;">
                             <i class="fas fa-search"></i>
                         </div>
-
+                        <h3>Author :</h3>
+                        <?php foreach($authours as $authour){ ?>
+                        <input type="checkbox" name="author" class="author" value="<?php echo $authour["name"] ?>"><?php echo $authour["name"]; ?>
                         <br>
+                        <?php } ?>
 
                     </form>
                 </div>
@@ -99,6 +104,23 @@ $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                     <p><?php echo $book["description"]; ?></p>
                                     <p class="price"><?php echo $book["price"]; ?></p>
                                 </div>
+                                <?php
+                                
+                                $sql_retrieveAuthors = "SELECT a.* FROM bookauthour b JOIN authour a ON  a.id = b.idAuthour where b.idBook=".$book["id"];
+                                $result_author = mysqli_query($conn, $sql_retrieveAuthors);
+                                $authors = mysqli_fetch_all($result_author, MYSQLI_ASSOC);
+                            
+                                
+                                ?>
+                                <ul>
+                                    <?php
+                                        foreach($authors as $author){ ?>
+
+                                            <li><?php echo $author["name"]; ?></li>
+
+                                      <?php  } ?>
+                                
+                                </ul>
                             </div>
                         </div>
                     </div>

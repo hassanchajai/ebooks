@@ -178,7 +178,7 @@ if (isset($_POST["submit-form"])) {
                     <label for="description">Description :</label>
                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
                 </div>
-                <button type="submit" name="submit-form">Submit</button>
+                <button type="submit" name="submit-form" disabled>Submit</button>
             </form>
         </div>
     </section>

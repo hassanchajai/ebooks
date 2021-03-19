@@ -122,7 +122,7 @@ if(isset($_POST["submit-delete"])){
 
                             <ul>
                                 <li>
-                                    <a class="" href="#">Edit</a>
+                                    <a class="edit.php?id=<?php echo $book["id"]; ?>" href="edit.php?id=<?php echo $book["id"]; ?>">Edit</a>
 
                                 </li>
                                 <li>
