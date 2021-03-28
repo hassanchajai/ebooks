@@ -118,21 +118,21 @@ if(isset($_POST["submit-delete"])){
                         <td><?php echo $book["description"]; ?></td>
                         <td><?php echo $book["price"]; ?></td>
                         <td class="edit">
-                            <i class="fas fa-bars"></i>
+                            <!-- <i class="fas fa-bars"></i> -->
 
-                            <ul>
-                                <li>
+                            <!-- <ul> -->
+                                <!-- <li> -->
                                     <a class="edit.php?id=<?php echo $book["id"]; ?>" href="edit.php?id=<?php echo $book["id"]; ?>">Edit</a>
 
-                                </li>
-                                <li>
+                                <!-- </li> -->
+                                <!-- <li> -->
                                 <form action="books.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo  $book["id"]; ?>" />
                                 <button name="submit-delete" type="submit" href="#">Delete</button>
                                 </form>
                                     
-                                </li>
-                            </ul>
+                                <!-- </li> -->
+                            <!-- </ul> -->
 
                         </td>
 
