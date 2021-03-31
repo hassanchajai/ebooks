@@ -126,7 +126,7 @@ if(isset($_POST["submit-delete"])){
 
                                 <!-- </li> -->
                                 <!-- <li> -->
-                                <form action="books.php" method="POST">
+                                <form action="books.php" method="POST" style="margin: 7px 0px;">
                                 <input type="hidden" name="id" value="<?php echo  $book["id"]; ?>" />
                                 <button name="submit-delete" type="submit" href="#">Delete</button>
                                 </form>

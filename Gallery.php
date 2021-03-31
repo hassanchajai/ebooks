@@ -80,7 +80,7 @@ $authours = mysqli_fetch_all($result_authour, MYSQLI_ASSOC);
                         </div>
                         <h3>Author :</h3>
                         <?php foreach($authours as $authour){ ?>
-                        <input type="checkbox" name="author" class="author" value="<?php echo $authour["name"] ?>"><?php echo $authour["name"]; ?>
+                        <input type="radio" name="author" class="author" value="<?php echo $authour["name"] ?>"><?php echo $authour["name"]; ?>
                         <br>
                         <?php } ?>
 
